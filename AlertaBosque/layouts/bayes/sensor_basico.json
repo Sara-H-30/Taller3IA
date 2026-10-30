@@ -1,0 +1,9 @@
+{
+  "name": "Sensor básico", "description": "Dos variables para comprobar Bayes y utilidad esperada a mano.",
+  "nodes": [
+    {"name":"Incendio","parents":[],"cpt":{"":0.1},"position":[0.5,0.25]},
+    {"name":"Alarma","parents":["Incendio"],"cpt":{"0":0.05,"1":0.9},"position":[0.5,0.75]}
+  ],
+  "cases":{"sin_evidencia":{},"alarma":{"Alarma":1},"sin_alarma":{"Alarma":0}},
+  "utilities":{"monitorear":{"0":0,"1":-100},"inspeccionar":{"0":-8,"1":-25},"brigada":{"0":-30,"1":-5}}
+}

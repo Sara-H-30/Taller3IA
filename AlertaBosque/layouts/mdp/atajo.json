@@ -1,0 +1,1 @@
+{"name":"Atajo con viento","description":"Ruta corta junto a zonas de pérdida; un rodeo permite alejarse del peligro.","grid":[".......",".......","S.....G",".XXXXX."],"noise":0.2,"living_reward":-0.04,"discount":0.95,"terminal_rewards":{"G":2,"X":-5}}

@@ -1,0 +1,14 @@
+{
+  "name":"Estación del bosque", "description":"Señales ambientales y fallas de sensor. Evidencia rara y órdenes de eliminación.",
+  "nodes":[
+    {"name":"Tormenta","parents":[],"cpt":{"":0.08},"position":[0.18,0.15]},
+    {"name":"Sequedad","parents":[],"cpt":{"":0.4},"position":[0.5,0.15]},
+    {"name":"Falla","parents":[],"cpt":{"":0.02},"position":[0.82,0.15]},
+    {"name":"Incendio","parents":["Tormenta","Sequedad"],"cpt":{"00":0.005,"01":0.12,"10":0.08,"11":0.45},"position":[0.32,0.42]},
+    {"name":"Humo","parents":["Incendio"],"cpt":{"0":0.06,"1":0.9},"position":[0.15,0.7]},
+    {"name":"Temperatura","parents":["Incendio","Sequedad"],"cpt":{"00":0.04,"01":0.3,"10":0.85,"11":0.95},"position":[0.52,0.68]},
+    {"name":"Alarma","parents":["Humo","Temperatura","Falla"],"cpt":{"000":0.01,"001":0.8,"010":0.5,"011":0.85,"100":0.7,"101":0.9,"110":0.98,"111":0.99},"position":[0.8,0.88]}
+  ],
+  "cases":{"sin_evidencia":{},"alarma":{"Alarma":1},"humo_calor":{"Humo":1,"Temperatura":1},"alarma_falla":{"Alarma":1,"Falla":1},"rara":{"Tormenta":1,"Falla":1,"Alarma":1}},
+  "utilities":{"monitorear":{"0":0,"1":-100},"inspeccionar":{"0":-8,"1":-25},"brigada":{"0":-30,"1":-5}}
+}

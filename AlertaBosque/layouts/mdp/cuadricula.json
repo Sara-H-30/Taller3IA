@@ -1,0 +1,1 @@
+{"name":"Cuadrícula básica","description":"Propagación de valores, rebotes y un terminal peligroso.","grid":["...G",".#.X","S..."],"noise":0.2,"living_reward":-0.04,"discount":0.9,"terminal_rewards":{"G":1,"X":-1}}
